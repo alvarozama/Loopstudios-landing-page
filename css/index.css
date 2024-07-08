@@ -1,0 +1,210 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Alata", helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+.header {
+  background-image: url(/images/mobile/image-hero.jpg);
+  background-size: cover;
+  height: 650px;
+  padding: 1.5em;
+}
+
+.header__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo:hover,
+.header__hamburger:hover {
+  cursor: pointer;
+}
+
+.header__text {
+  border: solid hsl(0, 0%, 100%) 2px;
+  color: hsl(0, 0%, 100%);
+  position: relative;
+  left: 0;
+  top: 28%;
+  padding: 0.5em 0.8em;
+  font-family: "Josefin Sans", helvetica, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 200;
+  line-height: 2.5rem;
+}
+
+.mobile-nav {
+  display: none;
+  background-color: hsl(0, 0%, 0%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1.5em;
+}
+.mobile-nav__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobile-nav__menu {
+  justify-content: space-around;
+  font-family: "Josefin Sans", helvetica, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 100;
+  list-style-type: none;
+  position: relative;
+  left: 0;
+  top: 20%;
+}
+.mobile-nav__menu-item {
+  margin: 10px 0;
+}
+.mobile-nav__menu-item-link {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  padding: 6em 3em;
+  font-family: "Josefin Sans", helvetica, sans-serif;
+}
+.intro__photo-img {
+  width: 327px;
+}
+.intro__title {
+  font-size: 2rem;
+  font-weight: 200;
+  line-height: 2rem;
+  text-align: center;
+}
+.intro__info {
+  font-family: "Alata", helvetica, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 0;
+  color: hsl(0, 0%, 55%);
+  text-align: center;
+}
+
+.creations {
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6em;
+  font-family: "Josefin Sans", helvetica, sans-serif;
+}
+.creations__title {
+  font-family: "Josefin Sans", helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 2rem;
+}
+.creations__element {
+  height: 120px;
+  width: 100%;
+  margin: 0;
+  background-size: cover;
+  padding: 3em 0 0 1em;
+  box-shadow: inset 200px -1px 143px -78px rgba(0, 0, 0, 0.55);
+}
+.creations__element-title {
+  color: hsl(0, 0%, 100%);
+  font-weight: 200;
+  width: 130px;
+  line-height: 1.1em;
+}
+.creations__element--deepearth {
+  background-image: url(/images/mobile/image-deep-earth.jpg);
+}
+.creations__element--nightarcade {
+  background-image: url(/images/mobile/image-night-arcade.jpg);
+}
+.creations__element--soccerteam {
+  background-image: url(/images/mobile/image-soccer-team.jpg);
+}
+.creations__element--thegrid {
+  background-image: url(/images/mobile/image-grid.jpg);
+}
+.creations__element--upabove {
+  background-image: url(/images/mobile/image-from-above.jpg);
+}
+.creations__element--borealis {
+  background-image: url(/images/mobile/image-pocket-borealis.jpg);
+}
+.creations__element--curiosity {
+  background-image: url(/images/mobile/image-curiosity.jpg);
+}
+.creations__element--fisheye {
+  background-image: url(/images/mobile//image-fisheye.jpg);
+}
+.creations__element:hover {
+  cursor: pointer;
+}
+.creations__button {
+  border: solid hsl(0, 0%, 55%) thin;
+  background-color: hsl(0, 0%, 100%);
+  width: 50%;
+  font-size: 0.8rem;
+  padding: 0.8em 0;
+  letter-spacing: 3px;
+}
+.creations__button:hover {
+  cursor: pointer;
+}
+.creations__button-link {
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+}
+
+.footer {
+  background-color: hsl(0, 0%, 0%);
+  padding: 2.5em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+.footer__links {
+  list-style-type: none;
+  line-height: 3em;
+  text-align: center;
+  font-weight: 100;
+}
+.footer__links-link {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.footer__rights {
+  color: hsl(0, 0%, 55%);
+  font-size: 0.9rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
