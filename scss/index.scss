@@ -5,6 +5,26 @@ $clr-verydarkgrey: hsl(0, 0%, 41%);
 $font-alata: "Alata", helvetica, sans-serif ;
 $font-josefin: "Josefin Sans", helvetica, sans-serif;
 
+@mixin active-state {
+    display: block;
+    content: '';
+    padding-top: 4px;
+    border-bottom: 2px solid $clr-white;
+    position: relative;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    transition: transform .1s ease;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+}
+
+@mixin active-state-hovered {
+    transform: scaleX(1);
+    transform-origin: 0 50%;
+    transition-delay: .1s;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,7 +37,7 @@ body {
 }
 
 .header {
-    background-image: url(/images/mobile/image-hero.jpg);
+    background-image: url(../images/mobile/image-hero.jpg);
     background-size: cover;
     height: 650px;
     padding: 1.5em;
@@ -98,7 +118,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 2em;
-    padding: 6em 3em;
+    padding: 6em 3em 3em 3em;
     font-family: $font-josefin;
 
     &__photo-img--mobile {
@@ -107,6 +127,12 @@ body {
 
     &__photo-img--desktop {
         display: none;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 1.3em;
     }
 
     &__title {
@@ -143,6 +169,13 @@ body {
         font-size: 2rem;
     }
 
+    &__elements-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
     &__element {
         height: 120px;
         width: 100%;
@@ -159,35 +192,35 @@ body {
         }
 
         &--deepearth {
-            background-image: url(/images/mobile/image-deep-earth.jpg);
+            background-image: url(../images/mobile/image-deep-earth.jpg);
         }
     
         &--nightarcade {
-            background-image: url(/images/mobile/image-night-arcade.jpg);
+            background-image: url(../images/mobile/image-night-arcade.jpg);
         }
     
         &--soccerteam {
-            background-image: url(/images/mobile/image-soccer-team.jpg);
+            background-image: url(../images/mobile/image-soccer-team.jpg);
         }
     
         &--thegrid {
-            background-image: url(/images/mobile/image-grid.jpg);
+            background-image: url(../images/mobile/image-grid.jpg);
         }
     
         &--upabove {
-            background-image: url(/images/mobile/image-from-above.jpg);
+            background-image: url(../images/mobile/image-from-above.jpg);
         }
     
         &--borealis {
-            background-image: url(/images/mobile/image-pocket-borealis.jpg);
+            background-image: url(../images/mobile/image-pocket-borealis.jpg);
         }
     
         &--curiosity {
-            background-image: url(/images/mobile/image-curiosity.jpg);
+            background-image: url(../images/mobile/image-curiosity.jpg);
         }
     
         &--fisheye {
-            background-image: url(/images/mobile//image-fisheye.jpg);
+            background-image: url(../images/mobile//image-fisheye.jpg);
         }
     }
 
@@ -206,15 +239,10 @@ body {
         letter-spacing: 3px;
     }
 
-    &__button--mobile:hover, &__button--mobile-link:hover {
+    &__button--mobile:hover {
         cursor: pointer;
         background-color: $clr-black;
         color: $clr-white;
-    }
-
-    &__button--mobile-link {
-        text-decoration: none;
-        color: $clr-black;
     }
 
 }
@@ -239,12 +267,35 @@ body {
             color: $clr-white;
         }
 
+        &-link::after {
+            @include active-state()
+        }
+
+        &-link:hover::after {
+            @include active-state-hovered();
+        }
+
+    }
+
+    &__container--right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5em;
     }
 
     &__social {
         display: flex;
         align-items: center;
         gap: 20px;
+
+        &-element::after {
+            @include active-state();
+        }
+
+        &-element:hover::after {
+            @include active-state-hovered();
+        }
     }
 
     &__rights {
@@ -267,7 +318,7 @@ body {
 /* lg */ 
 @media (min-width: 1024px) {
     .header {
-        background-image: url(/images/desktop/image-hero.jpg);
+        background-image: url(../images/desktop/image-hero.jpg);
         height: 650px;
         box-shadow: inset 200px 200px 300px 200px rgba(0,0,0,0.53);
 
@@ -297,7 +348,15 @@ body {
                     text-decoration: none;
                     color: $clr-white;
                 }
-               }
+
+                &-item-link::after {
+                    @include active-state();
+                }
+
+                &-item-link:hover::after {
+                    @include active-state-hovered();
+                }
+            }
         }
 
         &__text {
@@ -330,8 +389,6 @@ body {
             position: relative;
             top: 13em;
             right: 6em;
-            display: flex;
-            flex-direction: column;
             gap: 2em;
             padding: 6em 0 6em 6em;
         }
@@ -379,11 +436,12 @@ body {
             font-size: 0.8rem;
             padding: 0.2em 0;
             letter-spacing: 3px;
+        }
 
-            &-link {
-                text-decoration: none;
-                color: $clr-black;
-            }
+        &__button--desktop:hover {
+            cursor: pointer;
+            background-color: $clr-black;
+            color: $clr-white;
         }
 
         &__elements-container {
@@ -405,35 +463,35 @@ body {
             }
 
             &--deepearth {
-                background-image: url(/images/desktop/image-deep-earth.jpg);
+                background-image: url(../images/desktop/image-deep-earth.jpg);
             }
         
             &--nightarcade {
-                background-image: url(/images/desktop/image-night-arcade.jpg);
+                background-image: url(../images/desktop/image-night-arcade.jpg);
             }
         
             &--soccerteam {
-                background-image: url(/images/desktop/image-soccer-team.jpg);
+                background-image: url(../images/desktop/image-soccer-team.jpg);
             }
         
             &--thegrid {
-                background-image: url(/images/desktop/image-grid.jpg);
+                background-image: url(../images/desktop/image-grid.jpg);
             }
         
             &--upabove {
-                background-image: url(/images/desktop/image-from-above.jpg);
+                background-image: url(../images/desktop/image-from-above.jpg);
             }
         
             &--borealis {
-                background-image: url(/images/desktop/image-pocket-borealis.jpg);
+                background-image: url(../images/desktop/image-pocket-borealis.jpg);
             }
         
             &--curiosity {
-                background-image: url(/images/desktop/image-curiosity.jpg);
+                background-image: url(../images/desktop/image-curiosity.jpg);
             }
         
             &--fisheye {
-                background-image: url(/images/desktop/image-fisheye.jpg);
+                background-image: url(../images/desktop/image-fisheye.jpg);
             }
         }
     }
