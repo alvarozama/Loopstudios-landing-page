@@ -15,22 +15,17 @@ body {
   height: 650px;
   padding: 1.5em;
 }
-
 .header__main {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-.header__logo:hover,
-.header__hamburger:hover {
+.header__logo:hover, .header__hamburger:hover {
   cursor: pointer;
 }
-
 .header__nav {
   display: none;
 }
-
 .header__text {
   border: solid hsl(0, 0%, 100%) 2px;
   color: hsl(0, 0%, 100%);

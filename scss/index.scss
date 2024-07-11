@@ -41,34 +41,33 @@ body {
     background-size: cover;
     height: 650px;
     padding: 1.5em;
-}
 
-.header__main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-.header__logo:hover,
-.header__hamburger:hover {
-    cursor: pointer;
-}
+    &__logo:hover, &__hamburger:hover {
+        cursor: pointer;
+    }
 
-.header__nav {
-    display: none;
-}
+    &__nav {
+        display: none;
+    }
 
-.header__text {
-    border: solid $clr-white 2px;
-    color: $clr-white;
-    position: relative;
-    left: 0;
-    top: 28%;
-    padding: 0.5em 0.8em;
-    font-family: $font-josefin;
-    font-size: 2.5rem;
-    font-weight: 200;
-    line-height: 2.5rem;
+    &__text {
+        border: solid $clr-white 2px;
+        color: $clr-white;
+        position: relative;
+        left: 0;
+        top: 28%;
+        padding: 0.5em 0.8em;
+        font-family: $font-josefin;
+        font-size: 2.5rem;
+        font-weight: 200;
+        line-height: 2.5rem; 
+    }
 }
 
 .mobile-nav {
@@ -223,7 +222,7 @@ body {
             background-image: url(../images/mobile//image-fisheye.jpg);
         }
     }
-
+    
     &__element:hover {
         cursor: pointer;
         opacity: 80%;
